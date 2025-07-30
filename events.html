@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamimfy - Events</title>
+    <link rel="icon" href="https://dalviconsultancy.github.io/gamify/images/logo_gamify.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://dalviconsultancy.github.io/gamify/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://dalviconsultancy.github.io/gamify/index.html"><img src="https://dalviconsultancy.github.io/gamify/images/logo_gamify.png" alt="Gamimfy Logo" height="40" loading="lazy"> Gamimfy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://dalviconsultancy.github.io/gamify/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://dalviconsultancy.github.io/gamify/plans.html">Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://dalviconsultancy.github.io/gamify/games.html">Games</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="https://dalviconsultancy.github.io/gamify/events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://dalviconsultancy.github.io/gamify/booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://dalviconsultancy.github.io/gamify/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 text-center">
+        <div class="container">
+            <h1 class="display-4">Upcoming Events</h1>
+            <p class="lead">Join our community for exciting tournaments and events.</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Event Calendar</h2>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="btn btn-outline-info">&lt;</button>
+                    <h3 id="currentMonthYear"></h3>
+                    <button id="nextMonth" class="btn btn-outline-info">&gt;</button>
+                </div>
+                <div class="calendar-weekdays"></div>
+                <div class="calendar-days"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div id="eventDetailsDisplay" class="event-details-card mb-5" style="display: none;">
+                <h4 class="event-details-title"></h4>
+                <p class="event-details-description"></p>
+            </div>
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://dalviconsultancy.github.io/gamify/images/event_valorant.png" class="card-img-top" alt="Valorant Tournament" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Weekly Valorant Tournament</h5>
+                            <p class="card-text">Join us every Friday for our weekly Valorant tournament. Prizes for the top 3 teams.</p>
+                            <p class="card-text"><small class="text-muted">Fridays at 6:00 PM</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://dalviconsultancy.github.io/gamify/images/event_lol.png" class="card-img-top" alt="League of Legends LAN Party" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">League of Legends LAN Party</h5>
+                            <p class="card-text">A full day of League of Legends. Play with friends, meet new people, and enjoy the game.</p>
+                            <p class="card-text"><small class="text-muted">Saturday, August 16th at 12:00 PM</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://dalviconsultancy.github.io/gamify/images/event_cricket.png" class="card-img-top" alt="Cricket Match Screening" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Live Cricket Match Screening</h5>
+                            <p class="card-text">Watch the biggest cricket matches live on our big screens with fellow fans!</p>
+                            <p class="card-text"><small class="text-muted">Check schedule for upcoming matches</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2025 Gamimfy. All rights reserved.</p>
+        <div class="social-icons mt-3">
+            <a href="https://www.instagram.com/" class="text-white mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.youtube.com/" class="text-white mx-2"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="https://discord.com/" class="text-white mx-2"><i class="fab fa-discord fa-2x"></i></a>
+        </div>
+        <p class="text-muted small mt-3">Made by Ishaan Dalvi</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const currentMonthYear = document.getElementById('currentMonthYear');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        const calendarDays = document.querySelector('.calendar-days');
+        const calendarWeekdays = document.querySelector('.calendar-weekdays');
+
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth();
+
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+        // Sample event data (Year, Month (0-indexed), Day, Title, Description)
+        const events = [
+            { year: 2025, month: 6, day: 10, title: 'Retro Gaming Night', description: 'A night dedicated to classic arcade and console games.' },
+            { year: 2025, month: 6, day: 20, title: 'Fighting Game Tournament', description: 'Compete in Street Fighter, Tekken, and Mortal Kombat.' },
+            { year: 2025, month: 7, day: 16, title: 'Weekly Valorant Tournament', description: 'Join us every Friday for our weekly Valorant tournament. Prizes for the top 3 teams.' },
+            { year: 2025, month: 7, day: 23, title: 'League of Legends LAN Party', description: 'A full day of League of Legends. Play with friends, meet new people, and enjoy the game.' },
+            { year: 2025, month: 7, day: 29, title: 'Live Cricket Match Screening', description: 'Watch the biggest cricket matches live on our big screens with fellow fans!' },
+            { year: 2025, month: 8, day: 5, title: 'New Game Release Party', description: 'Celebrate the launch of a highly anticipated new title!' }
+        ];
+
+        function renderCalendar() {
+            // Clear previous days
+            calendarDays.innerHTML = '';
+            calendarWeekdays.innerHTML = '';
+
+            // Render weekdays
+            weekdays.forEach(day => {
+                const div = document.createElement('div');
+                div.textContent = day;
+                calendarWeekdays.appendChild(div);
+            });
+
+            // Get first day of the month and last date of the month
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const lastDate = lastDay.getDate();
+            const firstDayIndex = firstDay.getDay();
+
+            // Update current month and year display
+            currentMonthYear.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${year}`;
+
+            // Add empty divs for days before the first day of the month
+            for (let i = 0; i < firstDayIndex; i++) {
+                const div = document.createElement('div');
+                calendarDays.appendChild(div);
+            }
+
+            // Render days of the month
+            for (let i = 1; i <= lastDate; i++) {
+                const div = document.createElement('div');
+                div.textContent = i;
+                if (i === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
+                    div.classList.add('current-day');
+                }
+
+                // Check for events on this day
+                const dayEvents = events.filter(event => event.year === year && event.month === month && event.day === i);
+                if (dayEvents.length > 0) {
+                    div.classList.add('has-event');
+                    div.addEventListener('click', () => {
+                        const modalTitle = document.getElementById('eventModalLabel');
+                        const modalBody = document.getElementById('eventModalBody');
+                        modalTitle.textContent = `Events on ${firstDay.toLocaleString('default', { month: 'long' })} ${i}, ${year}`;
+                        modalBody.innerHTML = '';
+                        dayEvents.forEach(event => {
+                            const eventDiv = document.createElement('div');
+                            eventDiv.innerHTML = `<h5>${event.title}</h5><p>${event.description}</p>`;
+                            modalBody.appendChild(eventDiv);
+                        });
+                        const eventModal = new bootstrap.Modal(document.getElementById('eventModal'));
+                        eventModal.show();
+                    });
+                }
+                calendarDays.appendChild(div);
+            }
+        }
+
+        prevMonthBtn.addEventListener('click', () => {
+            month--;
+            if (month < 0) {
+                month = 11;
+                year--;
+            }
+            renderCalendar();
+        });
+
+        nextMonthBtn.addEventListener('click', () => {
+            month++;
+            if (month > 11) {
+                month = 0;
+                year++;
+            }
+            renderCalendar();
+        });
+
+        renderCalendar();
+    </script>
+
+    <!-- Event Details Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="eventModalBody">
+                    <!-- Event details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
