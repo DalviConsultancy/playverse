@@ -194,7 +194,7 @@ h6 {
 }
 
 .bg-about-section {
-    background: url('../images/logo_gamify.png') no-repeat center center/cover;
+    background: url('../images/logo_playverse.png') no-repeat center center/cover;
     background-attachment: fixed;
     position: relative;
     padding: 4rem 0;
@@ -379,4 +379,35 @@ footer p, footer .text-muted.small, footer .social-icons a {
 .btn-outline-info:hover {
     background-color: #00f0ff;
     color: #1a1a1a;
+}
+
+
+.cta-button {
+    background: #00f0ff;
+    border: none;
+    color: #1a1a1a;
+    padding: 12px 30px;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    color: #1a1a1a;
+    box-shadow: 0 0 20px #00f0ff;
+    transform: translateY(-3px);
+}
+
+.social-icons a {
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+    margin: 0 10px;
+}
+
+.social-icons a:hover {
+    color: #00f0ff;
+    transform: scale(1.2);
 }
