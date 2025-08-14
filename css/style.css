@@ -19,7 +19,6 @@ body {
 
 .navbar-brand img {
     transition: transform 0.3s ease;
-    filter: brightness(10.0);
 }
 
 .navbar-brand img:hover {
