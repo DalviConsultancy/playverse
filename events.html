@@ -10,7 +10,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div id="header-placeholder"></div>
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="offcanvas-nav-links">
+                <!-- Links will be dynamically inserted here -->
+            </ul>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+            <!-- Hamburger button for Offcanvas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Logo and Site Name (centered on mobile, left on desktop) -->
+            <a class="navbar-brand navbar-brand-centered" href="index.html"><img src="images/logo_playverse.png" alt="Playverse Logo" height="60" loading="lazy"> <span style="color: #FF9068;">Play</span><span style="color: #8CE3FF;">verse</span> <span style="color: white;">Esports Center</span></a>
+
+            <!-- Main Navbar links (visible on desktop, right-aligned) -->
+            <div class="d-none d-lg-block"> <!-- Hide on small screens -->
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item me-3"><a class="nav-link" href="news.html">News</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="prices.html">Prices</a></li>
+                </ul>
+            </div>
+    </nav>
 
     <header class="py-5 text-center">
         <div class="container">
@@ -76,118 +105,57 @@
         </div>
     </section>
 
-    <div id="footer-placeholder"></div>
+    <footer class="text-center py-4">
+        <p>&copy; 2025 Playverse. All rights reserved.</p>
+        <div class="social-icons mt-3">
+            <a href="https://www.instagram.com/" class="text-white mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.youtube.com/" class="text-white mx-2"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="https://discord.com/" class="text-white mx-2"><i class="fab fa-discord fa-2x"></i></a>
+        </div>
+        <p class="text-muted small mt-3">Made by Ishaan Dalvi</p>
+    </footer>
 
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data);
-
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
-
-        const currentMonthYear = document.getElementById('currentMonthYear');
-        const prevMonthBtn = document.getElementById('prevMonth');
-        const nextMonthBtn = document.getElementById('nextMonth');
-        const calendarDays = document.querySelector('.calendar-days');
-        const calendarWeekdays = document.querySelector('.calendar-weekdays');
-
-        let date = new Date();
-        let year = date.getFullYear();
-        let month = date.getMonth();
-
-        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-        // Sample event data (Year, Month (0-indexed), Day, Title, Description)
-        const events = [
-            { year: 2025, month: 6, day: 10, title: 'Retro Gaming Night', description: 'A night dedicated to classic arcade and console games.' },
-            { year: 2025, month: 6, day: 20, title: 'Fighting Game Tournament', description: 'Compete in Street Fighter, Tekken, and Mortal Kombat.' },
-            { year: 2025, month: 7, day: 16, title: 'Weekly Valorant Tournament', description: 'Join us every Friday for our weekly Valorant tournament. Prizes for the top 3 teams.' },
-            { year: 2025, month: 7, day: 23, title: 'League of Legends LAN Party', description: 'A full day of League of Legends. Play with friends, meet new people, and enjoy the game.' },
-            { year: 2025, month: 7, day: 29, title: 'Live Cricket Match Screening', description: 'Watch the biggest cricket matches live on our big screens with fellow fans!' },
-            { year: 2025, month: 8, day: 5, title: 'New Game Release Party', description: 'Celebrate the launch of a highly anticipated new title!' }
-        ];
-
-        function renderCalendar() {
-            // Clear previous days
-            calendarDays.innerHTML = '';
-            calendarWeekdays.innerHTML = '';
-
-            // Render weekdays
-            weekdays.forEach(day => {
-                const div = document.createElement('div');
-                div.textContent = day;
-                calendarWeekdays.appendChild(div);
-            });
-
-            // Get first day of the month and last date of the month
-            const firstDay = new Date(year, month, 1);
-            const lastDay = new Date(year, month + 1, 0);
-            const lastDate = lastDay.getDate();
-            const firstDayIndex = firstDay.getDay();
-
-            // Update current month and year display
-            currentMonthYear.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${year}`;
-
-            // Add empty divs for days before the first day of the month
-            for (let i = 0; i < firstDayIndex; i++) {
-                const div = document.createElement('div');
-                calendarDays.appendChild(div);
-            }
-
-            // Render days of the month
-            for (let i = 1; i <= lastDate; i++) {
-                const div = document.createElement('div');
-                div.textContent = i;
-                if (i === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
-                    div.classList.add('current-day');
-                }
-
-                // Check for events on this day
-                const dayEvents = events.filter(event => event.year === year && event.month === month && event.day === i);
-                if (dayEvents.length > 0) {
-                    div.classList.add('has-event');
-                    div.addEventListener('click', () => {
-                        const modalTitle = document.getElementById('eventModalLabel');
-                        const modalBody = document.getElementById('eventModalBody');
-                        modalTitle.textContent = `Events on ${firstDay.toLocaleString('default', { month: 'long' })} ${i}, ${year}`;
-                        modalBody.innerHTML = '';
-                        dayEvents.forEach(event => {
-                            const eventDiv = document.createElement('div');
-                            eventDiv.innerHTML = `<h5>${event.title}</h5><p>${event.description}</p>`;
-                            modalBody.appendChild(eventDiv);
-                        });
-                        const eventModal = new bootstrap.Modal(document.getElementById('eventModal'));
-                        eventModal.show();
-                    });
-                }
-                calendarDays.appendChild(div);
-            }
-        }
-
-        prevMonthBtn.addEventListener('click', () => {
-            month--;
-            if (month < 0) {
-                month = 11;
-                year--;
-            }
-            renderCalendar();
-        });
-
-        nextMonthBtn.addEventListener('click', () => {
-            month++;
-            if (month > 11) {
-                month = 0;
-                year++;
-            }
-            renderCalendar();
-        });
-
-        renderCalendar();
-    </script>
     <script src="js/custom.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinksContainer = document.getElementById('offcanvas-nav-links');
+            const pages = [
+                { name: 'Home', file: 'index.html' },
+                { name: 'About Us', file: 'about-us.html' },
+                { name: 'Booking', file: 'booking.html' },
+                { name: 'Contact', file: 'contact.html' },
+                { name: 'Deals', file: 'deals.html' },
+                { name: 'Events', file: 'events.html' },
+                { name: 'Gallery', file: 'gallery.html' },
+                { name: 'Games', file: 'games.html' },
+                { name: 'News', file: 'news.html' },
+                { name: 'PC Specs', file: 'pc-specs.html' },
+                { name: 'Plan', file: 'plan.html' },
+                { name: 'Plans', file: 'plans.html' },
+                { name: 'Prices', file: 'prices.html' },
+                { name: 'Services', file: 'services.html' }
+            ];
+
+            const currentPage = window.location.pathname.split('/').pop();
+
+            pages.forEach(page => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('nav-item');
+                const link = document.createElement('a');
+                link.classList.add('nav-link');
+                link.href = page.file;
+                link.textContent = page.name;
+
+                if (currentPage === page.file) {
+                    listItem.classList.add('active-page');
+                }
+                listItem.appendChild(link);
+                navLinksContainer.appendChild(listItem);
+            });
+        });
+    </script>
 </body>
 
     <!-- Event Details Modal -->

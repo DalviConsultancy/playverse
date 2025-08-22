@@ -1,5 +1,12 @@
-.navbar-brand-centered {
+.navbar-brand {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.active-page .nav-link::before {
+    content: '> ';
+    margin-right: 5px;
+    color: #00f0ff; /* Highlight color */
+    font-weight: bold;
 }
