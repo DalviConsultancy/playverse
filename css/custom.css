@@ -10,3 +10,25 @@
     color: #00f0ff; /* Highlight color */
     font-weight: bold;
 }
+
+/* Make navbar taller to fit logo */
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Add padding to the top of the body to make space for the fixed navbar */
+body {
+    padding-top: 71px;
+}
+
+/* Ensure list items in cards are white */
+.card li {
+    color: #ffffff;
+}
+
+/* Force all text within sections to be white for debugging */
+section * {
+    color: #ffffff !important;
+}
+
