@@ -426,7 +426,7 @@ footer p, footer .text-muted.small, footer .social-icons a {
 
 @media (max-width: 768px) {
     .hero-content {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
