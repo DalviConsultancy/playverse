@@ -74,7 +74,7 @@ body {
     font-size: 4.5rem;
     font-weight: 700;
     color: #fff;
-    text-shadow: 0 0 20px #00f0ff, 0 0 35px #00f0ff;
+    text-shadow: 0 0 10px #00f0ff, 0 0 18px #00f0ff;
 }
 
 h1, h5 {
@@ -422,4 +422,11 @@ footer p, footer .text-muted.small, footer .social-icons a {
 
 .main-content-flex-grow {
     flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
