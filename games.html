@@ -6,9 +6,8 @@
     <title>Playverse - Games</title>
     <link rel="icon" href="images/logo_playverse_main.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -58,7 +57,7 @@
                         <img src="images/game_cyberpunk_2077.png" class="card-img-top" alt="Cyberpunk 2077" loading="lazy">
                         <div class="card-body text-center">
                             <h5 class="card-title">Cyberpunk 2077</h5>
-                            <p class="card-text">An open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification.</p>
+                            <p class="card-text">An immersive open-world, action-adventure RPG set in the sprawling, dystopian Night City. Dive deep into a megalopolis obsessed with power, glamour, and cybernetic modification. As V, a mercenary outlaw, you'll embark on a thrilling journey to find a unique implant that is the key to immortality. Explore vast districts, make impactful choices, and forge your legend in this dark future.</p>
                         </div>
                     </div>
                 </div>
@@ -135,7 +134,7 @@
                     </div>
                 </div>
             <div class="col-md-6 mx-auto mb-4">
-                    <div class="card h-100 d-flex align-items-center justify-content-center text-center">
+                    <div class.card h-100 d-flex align-items-center justify-content-center text-center">
                         <div class="card-body">
                             <h5 class="card-title">And Many More!</h5>
                             <p class="card-text">Our library is constantly expanding with new and exciting titles. Visit us to discover your next favorite game!</p>
@@ -160,40 +159,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinksContainer = document.getElementById('offcanvas-nav-links');
-            const pages = [
-                { name: 'Home', file: 'index.html' },
-                { name: 'About Us', file: 'about-us.html' },
-                { name: 'Booking', file: 'booking.html' },
-                { name: 'Contact', file: 'contact.html' },
-                { name: 'Deals', file: 'deals.html' },
-                { name: 'Events', file: 'events.html' },
-                { name: 'Gallery', file: 'gallery.html' },
-                { name: 'Games', file: 'games.html' },
-                { name: 'News', file: 'news.html' },
-                { name: 'PC Specs', file: 'pc-specs.html' },
-                { name: 'Prices', file: 'prices.html' }
-            ];
-
-            const currentPage = window.location.pathname.split('/').pop();
-
-            pages.forEach(page => {
-                const listItem = document.createElement('li');
-                listItem.classList.add('nav-item');
-                const link = document.createElement('a');
-                link.classList.add('nav-link');
-                link.href = page.file;
-                link.textContent = page.name;
-
-                if (currentPage === page.file) {
-                    listItem.classList.add('active-page');
-                }
-                listItem.appendChild(link);
-                navLinksContainer.appendChild(listItem);
-            });
-        });
-    </script>
+    
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 html {
     background-color: #000000;
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
 }
 
 body {
@@ -71,7 +72,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #fff;
     text-shadow: 0 0 10px #00f0ff, 0 0 18px #00f0ff;
@@ -83,7 +84,7 @@ h1, h5 {
 
 .hero-content p {
     color: #c0c0c0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .btn-primary {
@@ -134,7 +135,7 @@ input, textarea {
 .section-title {
     text-align: center;
     margin-bottom: 4rem;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: #fff;
     text-shadow: 0 0 10px #00f0ff;
 }
@@ -161,7 +162,7 @@ input, textarea {
 
 .card h3 {
     color: #FFD700; /* Golden color */
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -184,7 +185,7 @@ h6 {
 }
 
 .bg-dark-gradient {
-    background: url('../images/section_gaming_library.png') no-repeat center center/cover;
+    background: url('../images/prices_console_gaming_zone.png') no-repeat center center/cover;
     background-attachment: fixed;
     position: relative;
     padding: 4rem 0;
@@ -202,7 +203,7 @@ h6 {
 }
 
 .bg-about-section {
-    background: url('../images/logo_playverse.png') no-repeat center center/cover;
+    background: url('../images/logo_playverse_main.png') no-repeat center center/cover;
     background-attachment: fixed;
     position: relative;
     padding: 4rem 0;
@@ -327,7 +328,7 @@ footer p, footer .text-muted.small, footer .social-icons a {
 }
 
 .calendar-header h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0;
 }
 
@@ -424,9 +425,104 @@ footer p, footer .text-muted.small, footer .social-icons a {
     flex-grow: 1;
 }
 
+@media (max-width: 991.98px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .navbar-brand-centered {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .navbar-toggler {
+        display: block;
+    }
+    .d-lg-block {
+        display: none !important;
+    }
+}
+
 @media (max-width: 768px) {
+    html {
+        font-size: clamp(0.9rem, 1.2vw + 0.4rem, 1.1rem);
+    }
+    .hero-section {
+        height: 60vh;
+        background-attachment: scroll;
+    }
     .hero-content {
         padding-left: 15px;
         padding-right: 15px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .card h3 {
+        font-size: 1.8rem;
+    }
+    .calendar-header h3 {
+        font-size: 1.3rem;
+    }
+    .calendar-days div {
+        padding: 6px;
+    }
+    .social-icons a {
+        margin: 0 5px;
+    }
+    footer {
+        padding: 1rem 0;
+    }
+    .navbar-brand span {
+        display: none;
+    }
+    .navbar-brand img {
+        height: 45px;
+    }
+    .offcanvas-body .navbar-nav {
+        align-items: center;
+    }
+    .offcanvas-start {
+        width: fit-content;
+        min-width: 180px;
+    }
+    .offcanvas-body {
+        padding-right: 2rem;
+    }
+    .main-content-flex-grow {
+        padding-top: 60px;
+    }
+    .bg-dark-gradient, .bg-about-section {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 0.8rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .card h3 {
+        font-size: 1.5rem;
+    }
+    .btn-primary, .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }
