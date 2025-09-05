@@ -53,3 +53,16 @@ footer .card-text a {
     text-decoration: none;
     color: #FFFFFF !important; /* Force white color for footer links */
 }
+
+.card-text a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.card-text a:hover {
+    color: #00f0ff;
+}
+
+.social-icons a:hover {
+    color: #00f0ff !important;
+}
