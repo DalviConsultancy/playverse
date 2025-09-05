@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeMarker = null;
 
     let startAngle = 0; // 12:00 PM
-    let endAngle = 0;  // 12:00 AM (full circle)
+    let endAngle = 30;  // 1:00 PM
 
     function getAngleFromEvent(event) {
         const svgRect = clock.getBoundingClientRect();
@@ -53,10 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let drawStartAngle = startAngle;
         let drawEndAngle = endAngle;
 
-        // Handle full circle or angle wrapping for the arc
-        if (drawStartAngle === drawEndAngle) {
-            drawEndAngle += 360;
-        } else if (drawEndAngle < drawStartAngle) {
+        // Handle angle wrapping for the arc
+        if (drawEndAngle < drawStartAngle) {
             drawEndAngle += 360;
         }
 
@@ -87,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         hiddenTimeInput.value = `${startTime} - ${endTime}`;
 
         let duration = (endAngle - startAngle + 360) % 360;
-        if (duration === 0) duration = 360;
         const durationHours = duration / 30; // 30 degrees per hour
         durationInput.value = durationHours.toFixed(2);
     }
@@ -146,23 +143,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!activeMarker) return;
         event.preventDefault();
         const angle = getAngleFromEvent(event);
+        const snapped = snapAngle(angle);
 
         if (activeMarker === startMarker) {
-            startAngle = angle;
+            startAngle = snapped;
         } else {
-            endAngle = angle;
+            endAngle = snapped;
         }
         updateClock();
     }
 
     function endDrag(event) {
         event.preventDefault();
-        if (activeMarker === startMarker) {
-            startAngle = snapAngle(startAngle);
-        } else if (activeMarker === endMarker) {
-            endAngle = snapAngle(endAngle);
-        }
-        updateClock();
         activeMarker = null;
     }
 
