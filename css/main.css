@@ -265,7 +265,6 @@ footer p, footer .text-muted.small, footer .social-icons a {
     }
     .hero-section {
         height: 80vh;
-        background-attachment: scroll;
     }
     .hero-content {
         padding-left: 30px;
@@ -323,7 +322,6 @@ footer p, footer .text-muted.small, footer .social-icons a {
     }
 
     .bg-about-section, .bg-dark-gradient {
-        background-attachment: scroll;
     }
 }
 
