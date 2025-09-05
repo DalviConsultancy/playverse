@@ -12,13 +12,22 @@ body {
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #ffffff;
     overflow-x: hidden;
-    padding-top: 80px;
     display: flex; /* Added for Flexbox */
     flex-direction: column; /* Added for Flexbox */
     min-height: 100vh; /* Added for Flexbox */
 }
 
+.offcanvas.text-bg-dark {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Light, foggy overlay */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
 .navbar {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    flex-shrink: 0; /* Added to prevent shrinking in flex container */
     background-color: #000000 !important; /* Full black */
     backdrop-filter: blur(10px); /* Keep if desired, but might be less effective with solid background */
     -webkit-backdrop-filter: blur(10px);
@@ -109,7 +118,7 @@ body {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3); /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */ /* Added subtle glow */
 }
 
 .card-title {
@@ -249,7 +258,8 @@ footer p, footer .text-muted.small, footer .social-icons a {
     }
 }
 
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
+
     html {
         font-size: clamp(0.9rem, 1.2vw + 0.4rem, 1.1rem);
     }
@@ -293,15 +303,25 @@ footer p, footer .text-muted.small, footer .social-icons a {
     .offcanvas-body .navbar-nav {
         align-items: flex-start;
     }
+    #offcanvasNavbar .nav-link {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1rem 0;
+    }
+    #offcanvasNavbar .offcanvas-title {
+        font-size: 2.5rem;
+        color: #00f0ff;
+        text-shadow: 0 0 10px #00f0ff;
+    }
     #offcanvasNavbar.offcanvas-start {
-        width: 150px !important;
+        width: 100% !important;
     }
     .offcanvas-body {
         padding-right: 0;
     }
-    .main-content-flex-grow {
-        padding-top: 60px;
-    }
+
     .bg-about-section, .bg-dark-gradient {
         background-attachment: scroll;
     }
@@ -321,4 +341,87 @@ footer p, footer .text-muted.small, footer .social-icons a {
     .card h3 {
         font-size: 1.5rem;
     }
+}
+.calendar-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Revert to original border */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff;
+}
+
+.calendar-header h3 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.calendar-weekdays, .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.calendar-weekdays div {
+    font-weight: bold;
+    color: #00f0ff;
+}
+
+.calendar-days div {
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.calendar-days div:hover {
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.calendar-days div.current-day {
+    background: #00f0ff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.calendar-days div.has-event {
+    border: 2px solid #00f0ff; /* Blue border for events */
+    position: relative;
+}
+
+.calendar-days div.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #FFD700;
+    border-radius: 50%;
+}
+
+.btn-outline-info {
+    color: #00f0ff;
+    border-color: #00f0ff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-info:hover {
+    background-color: #00f0ff;
+    color: #ffffff;
 }

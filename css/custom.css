@@ -7,7 +7,7 @@
 .active-page .nav-link::before {
     content: '> ';
     margin-right: 5px;
-    color: #00f0ff; /* Highlight color */
+    color: #FF9068; /* Highlight color */
     font-weight: bold;
 }
 
@@ -17,3 +17,27 @@
     padding-bottom: 15px;
 }
 
+/* Override Bootstrap's text-muted color for neon blue */
+.text-muted {
+    color: #00FFFF !important;
+}
+
+/* Set color for list items in pricing cards to neon blue */
+.card .list-unstyled li {
+    color: #00FFFF !important;
+}
+
+/* Change event titles in modal to neon blue */
+.modal-body h5 {
+    color: #00FFFF !important;
+}
+
+/* Change event descriptions in modal to neon blue */
+.modal-body p {
+    color: #00FFFF !important;
+}
+
+/* Change modal background to transparent neon blue */
+.modal-content {
+    background: rgba(0, 240, 255, 0.2) !important;
+}
