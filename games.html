@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Playverse - Games</title>
-    <link rel="icon" href="images/logo_playverse_main.avif" type="image/png">
+    <link rel="icon" href="images/logo_playverse_main.avif" type="image/avif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/main.css"></noscript>
     <link rel="preload" href="css/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -33,7 +33,7 @@
             </button>
 
             <!-- Logo and Site Name (centered on mobile, left on desktop) -->
-            <a class="navbar-brand navbar-brand-centered" href="index.html"><img src="images/logo_playverse_main.avif" alt="Playverse Logo" loading="lazy"> <span style="color: #FF9068;">Play</span><span style="color: #8CE3FF;">verse</span> <span style="color: white;">Gaming</span></a>
+            <a class="navbar-brand navbar-brand-centered" href="index.html"><img src="images/logo_playverse_main.avif" alt="Playverse Logo" loading="lazy" width="1536" height="60"> <span style="color: #FF9068;">Play</span><span style="color: #8CE3FF;">verse</span> <span style="color: white;">Gaming</span></a>
 
             <!-- Main Navbar links (visible on desktop, right-aligned) -->
             <div class="d-none d-lg-block"> <!-- Hide on small screens -->
@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_cyberpunk_2077.avif" class="card-img-top" alt="Cyberpunk 2077" loading="lazy">
+                        <img src="images/game_cyberpunk_2077.avif" class="card-img-top" alt="Cyberpunk 2077" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">Cyberpunk 2077</h3>
                             <p class="card-text">An immersive open-world, action-adventure RPG set in the sprawling, dystopian Night City. Dive deep into a megalopolis obsessed with power, glamour, and cybernetic modification. As V, a mercenary outlaw, you'll embark on a thrilling journey to find a unique implant that is the key to immortality. Explore vast districts, make impactful choices, and forge your legend in this dark future.</p>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_the_witcher_3.avif" class="card-img-top" alt="The Witcher 3" loading="lazy">
+                        <img src="images/game_the_witcher_3.avif" class="card-img-top" alt="The Witcher 3" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">The Witcher 3: Wild Hunt</h3>
                             <p class="card-text">A story-driven, open-world RPG set in a visually stunning fantasy universe full of meaningful choices and impactful consequences.</p>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_red_dead_redemption_2.avif" class="card-img-top" alt="Red Dead Redemption 2" loading="lazy">
+                        <img src="images/game_red_dead_redemption_2.avif" class="card-img-top" alt="Red Dead Redemption 2" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">Red Dead Redemption 2</h3>
                             <p class="card-text">A western-themed action-adventure game set in an open world environment. It is the third entry in the Red Dead series and a prequel to 2010's Red Dead Redemption.</p>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_fortnite.avif" class="card-img-top" alt="Fortnite" loading="lazy">
+                        <img src="images/game_fortnite.avif" class="card-img-top" alt="Fortnite" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">Fortnite</h3>
                             <p class="card-text">A battle royale game where 100 players fight to be the last one standing.</p>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_pubg_battlegrounds.avif" class="card-img-top" alt="PUBG" loading="lazy">
+                        <img src="images/game_pubg_battlegrounds.avif" class="card-img-top" alt="PUBG" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">PUBG: Battlegrounds</h3>
                             <p class="card-text">A battle royale shooter where 100 players parachute onto an island and scavenge for weapons and equipment to kill others while avoiding getting killed themselves.</p>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_minecraft.avif" class="card-img-top" alt="Minecraft" loading="lazy">
+                        <img src="images/game_minecraft.avif" class="card-img-top" alt="Minecraft" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">Minecraft</h3>
                             <p class="card-text">A sandbox game where you can build anything you can imagine.</p>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_roblox.avif" class="card-img-top" alt="Roblox" loading="lazy">
+                        <img src="images/game_roblox.avif" class="card-img-top" alt="Roblox" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">Roblox</h3>
                             <p class="card-text">An online platform and storefront where users can program games and play games created by other users.</p>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_asphalt_9.avif" class="card-img-top" alt="Asphalt 9" loading="lazy">
+                        <img src="images/game_asphalt_9.avif" class="card-img-top" alt="Asphalt 9" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">Asphalt 9: Legends</h3>
                             <p class="card-text">A racing video game developed by Gameloft Barcelona and published by Gameloft.</p>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="images/game_marvels_spider_man.avif" class="card-img-top" alt="Spider-Man" loading="lazy">
+                        <img src="images/game_marvels_spider_man.avif" class="card-img-top" alt="Spider-Man" loading="lazy" width="400" height="225">
                         <div class="card-body text-center">
                             <h3 class="card-title">Marvel's Spider-Man</h3>
                             <p class="card-text">An action-adventure game based on the Marvel Comics character Spider-Man.</p>
