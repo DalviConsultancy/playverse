@@ -1,62 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+.analog-clock-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 40px auto 20px auto; /* Increased top margin */
+    border-radius: 50%;
+    background: transparent; /* Made transparent */
+    box-shadow: none; /* Removed box shadow for transparency */
+    /* Reverted border and outline */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-body {
+#analogClockCanvas {
+    display: block;
+    background: transparent;
+    border-radius: 50%;
+    /* Reverted margin */
+}
+
+.digital-time-display {
     font-family: 'Orbitron', sans-serif;
-    background: #0f0c29;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #f0f0f0;
-    overflow-x: hidden;
-}
-
-.navbar {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-}
-
-.navbar-brand img {
-    transition: transform 0.3s ease;
-}
-
-.navbar-brand img:hover {
-    transform: scale(1.1);
-}
-
-.nav-link {
-    color: #f0f0f0 !important;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: #00f0ff !important;
+    font-size: 1.8rem;
+    color: #8CE3FF;
     text-shadow: 0 0 10px #00f0ff;
+    margin-top: 20px; /* Increased margin to push it further down */
+    white-space: nowrap; /* Ensure it stays on one line */
+    width: 600px; /* Doubled width */
+    max-width: 90%; /* Responsive max-width */
+    padding: 0; /* Remove padding */
+    box-sizing: border-box; /* Include padding in width */
+    text-align: center; /* Ensure text is centered */
+    background: transparent; /* Make background transparent */
+    border: none !important; /* Remove border with !important */
+    outline: none; /* Remove outline on focus */
 }
 
-header.py-5 {
-    background: transparent;
-    text-align: center;
-    padding: 6rem 0 !important;
-}
-
-header h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff;
-}
-
-header .lead {
-    color: #a0a0a0;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-section.py-5 {
-    background: transparent;
-}
-
+/* Basic styling for the form elements if they are re-inserted */
 form {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
@@ -65,6 +46,7 @@ form {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    margin-top: 40px; /* Space from clock */
 }
 
 .form-label {
@@ -81,8 +63,6 @@ form {
 }
 
 .form-control:focus, .form-select:focus {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
     box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
     border-color: #00f0ff;
 }
@@ -91,6 +71,7 @@ form {
     color: #eee;
 }
 
+/* Adjust button centering for new layout */
 .btn-primary {
     background: #00f0ff;
     border: none;
@@ -99,6 +80,8 @@ form {
     font-weight: 700;
     border-radius: 8px;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    display: block; /* Make it a block element */
+    margin: 40px auto 0 auto; /* More space above button */
 }
 
 .btn-primary:hover {
@@ -108,80 +91,60 @@ form {
     transform: translateY(-3px);
 }
 
-.clock-container {
-    width: 300px;
-    height: 300px;
-    margin: 20px auto;
-    position: relative;
-    user-select: none;
+/* New styles for layout */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: #ffffff; /* Ensure text color is visible */
 }
 
-.clock-face {
-    fill: rgba(0, 240, 255, 0.1);
-    stroke: #00f0ff;
-    stroke-width: 2;
+.card-title {
+    color: #FFA500; /* Changed to orange */
+    text-shadow: 0 0 8px #FFA500; /* Changed text-shadow to orange */
 }
 
-.hour-mark, .minute-mark {
-    stroke: #00f0ff;
+/* Adjustments for clock container within card */
+.analog-clock-container {
+    /* Existing styles */
+    margin-bottom: 20px; /* Add space below clock */
 }
 
-.hour-mark { stroke-width: 2; }
-.minute-mark { stroke-width: 1; }
-
-.time-marker {
-    fill: #00f0ff;
-    stroke: #fff;
-    stroke-width: 2;
-    cursor: pointer;
-    transition: fill 0.2s;
+/* Adjust digital time display within card */
+.digital-time-display {
+    /* Existing styles */
+    margin-bottom: 15px; /* Space below input */
 }
 
-.time-marker:hover {
-    fill: #fff;
-}
-
-.center-dot {
-    fill: #00f0ff;
-}
-
-.highlight-arc {
-    fill: rgba(0, 240, 255, 0.3);
-    stroke: #00f0ff;
-    stroke-width: 20;
-    pointer-events: none;
-    stroke-opacity: 0.5;
-}
-
-.time-display {
-    text-align: center;
-    margin-top: 15px;
-    font-size: clamp(1.5rem, 4vw, 1.8rem);
+/* Ensure form elements within card are styled correctly */
+.form-label {
     color: #00f0ff;
-    text-shadow: 0 0 8px #00f0ff;
 }
 
-#duration {
-    text-align: center;
-    font-size: 1.2rem;
+.form-control, .form-select {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00f0ff;
+    color: #ffffff;
 }
 
-footer {
-    border-top: 1px solid rgba(0, 240, 255, 0.2);
-    padding: 2rem 0;
-    background: #333333; /* Grey background */
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    border-color: #00f0ff;
 }
 
-footer p, footer .text-muted.small, footer .social-icons a {
-    color: #ffffff !important;
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    form {
-        padding: 1.5rem;
+    .col-md-5, .col-md-7 {
+        width: 100%; /* Stack columns on small screens */
     }
-    .clock-container {
+    .analog-clock-container {
         width: 250px;
         height: 250px;
+    }
+    .digital-time-display {
+        font-size: 1.5rem;
+        width: 250px;
     }
 }

@@ -252,8 +252,14 @@ h6 {
 }
 
 .modal-body h5 {
-    color: #FFD700; /* Golden for event titles in modal */
+    color: #FFA500; /* Orange for event titles in modal */
     text-shadow: none;
+}
+
+/* Broad override for text color to address persistent "yellow text" issue */
+/* This might affect unintended elements. */
+h1, h2, h3, h4, h5, h6, p, span, a, li, div {
+    color: #FF9068 !important;
 }
 
 .modal-body p {
